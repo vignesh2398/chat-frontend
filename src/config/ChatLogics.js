@@ -1,6 +1,6 @@
 export const getSender=(loggedUser,users)=>{
-  console.log(users)
-  console.log(loggedUser,"dddd")
+
+  
   console.log(users[0]._id== loggedUser.userExist._id)
     return users[0]._id== loggedUser.userExist._id?users[1].name:users[0].name
 };

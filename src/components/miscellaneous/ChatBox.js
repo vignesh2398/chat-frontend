@@ -15,7 +15,7 @@ bg="white"
 w={{base:"100%",md:"68%"}}
 boarderRadius="lg"
 boaderWidth="1px"
-><SingleChat fetchAgain={fetchAgain} setfetchAgain={fetchAgain}/>
+><SingleChat fetchAgain={fetchAgain} setfetchAgain={setfetchAgain}/>
 </Flex>
   )
 }

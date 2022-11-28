@@ -22,7 +22,6 @@ export const MyChats = ({fetchAgain}) => {
               };
              
               const{data}=await axios.get("https://chatapp2s.herokuapp.com/api/chat",config) 
-              console.log(data,"fdgdfgdffdg")
               setChats(data);
         } catch (error) {
             toast({
