@@ -38,7 +38,7 @@ export const Login = () => {
     try {
 
 
-      const { data } = await axios.post("https://chatapp2s.herokuapp.com/api/user/login",
+      const { data } = await axios.post("https://chat-backendxx.onrender.com/api/user/login",
         {"email": email,"password":password }
       );
 

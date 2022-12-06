@@ -21,7 +21,7 @@ export const MyChats = ({fetchAgain}) => {
                 },
               };
              
-              const{data}=await axios.get("https://chatapp2s.herokuapp.com/api/chat",config) 
+              const{data}=await axios.get("https://chat-backendxx.onrender.com/api/chat",config) 
               setChats(data);
         } catch (error) {
             toast({
@@ -42,6 +42,7 @@ export const MyChats = ({fetchAgain}) => {
     d={{ base: SelectedChat ? "none" : "flex", md: "flex" }}
     flexDir="column"
     alignItems="center"
+    
     p={3}
     bg="white"
     w={{ base: "100%", md: "31%" }}
@@ -65,6 +66,7 @@ export const MyChats = ({fetchAgain}) => {
                     fontSize={{ base: "17px", md: "10px", lg: "17px" }}
                     rightIcon={<AddIcon />}
                     >Create New Group</Button>
+
         </GroupChatModal>
         </Flex>
         <Box

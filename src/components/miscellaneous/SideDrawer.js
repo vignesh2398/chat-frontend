@@ -45,7 +45,7 @@ export const SideDrawer = () => {
         },
       };
       
-      const{data}=await axios.post("https://chatapp2s.herokuapp.com/api/chat",{userId},config)
+      const{data}=await axios.post("https://chat-backendxx.onrender.com/api/chat",{userId},config)
       console.log(data)
       if(!chats.find((c)=>c._id===data._id))
 
@@ -89,7 +89,7 @@ export const SideDrawer = () => {
           Authorization:`Bearer ${User.token}`
         },
       };
-      const {data}=await axios.get(`https://chatapp2s.herokuapp.com/api/user?search=${search}`,config)
+      const {data}=await axios.get(`https://chat-backendxx.onrender.com/api/user?search=${search}`,config)
       console.log(data)
       setLoading(false)
       setSearchResult(data)

@@ -12,7 +12,7 @@ import { ScrollableChat } from './ScrollableChat'
 import { io } from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationData from './Authentication/animations/typing.json'
-const ENDPOINT = "https://chatapp2s.herokuapp.com"; 
+const ENDPOINT = "https://chat-backendxx.onrender.com"; 
 var socket, selectedChatCompare;
 
 export const SingleChat = ({fetchAgain,setFetchAgain}) => {
@@ -47,7 +47,7 @@ export const SingleChat = ({fetchAgain,setFetchAgain}) => {
           }
         };
         setLoading(true)
-        const {data}=await axios.get(`https://chatapp2s.herokuapp.com/api/message/${SelectedChat._id}`,config)
+        const {data}=await axios.get(`https://chat-backendxx.onrender.com/api/message/${SelectedChat._id}`,config)
         console.log(Message,"this is msg")
         setMessage(data)
         setLoading(false)
@@ -75,7 +75,7 @@ export const SingleChat = ({fetchAgain,setFetchAgain}) => {
             }
           }
           setNewMessage("");
-          const {data}=await axios.post("https://chatapp2s.herokuapp.com/api/message",{content:newMessage,chatId:SelectedChat._id},config)
+          const {data}=await axios.post("https://chat-backendxx.onrender.com",{content:newMessage,chatId:SelectedChat._id},config)
           console.log(data)
           socket.emit("new message", data);
           setMessage([...Message,data]);
