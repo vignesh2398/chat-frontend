@@ -12,6 +12,7 @@ import { ScrollableChat } from './ScrollableChat'
 import { io } from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationData from './Authentication/animations/typing.json'
+import { url } from '../App'
 const ENDPOINT = "https://chat-backendxx.onrender.com"; 
 var socket, selectedChatCompare;
 
@@ -47,7 +48,7 @@ export const SingleChat = ({fetchAgain,setFetchAgain}) => {
           }
         };
         setLoading(true)
-        const {data}=await axios.get(`https://chat-backendxx.onrender.com/api/message/${SelectedChat._id}`,config)
+        const {data}=await axios.get(url+`api/message/${SelectedChat._id}`,config)
         console.log(Message,"this is msg")
         setMessage(data)
         setLoading(false)
@@ -75,7 +76,7 @@ export const SingleChat = ({fetchAgain,setFetchAgain}) => {
             }
           }
           setNewMessage("");
-          const {data}=await axios.post("https://chat-backendxx.onrender.com",{content:newMessage,chatId:SelectedChat._id},config)
+          const {data}=await axios.post(url,{content:newMessage,chatId:SelectedChat._id},config)
           console.log(data)
           socket.emit("new message", data);
           setMessage([...Message,data]);

@@ -7,6 +7,7 @@ import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
+import { url } from "../../App";
 
 export const Login = () => {
   const [show, setShow] = useState(false);
@@ -38,7 +39,7 @@ export const Login = () => {
     try {
 
 
-      const { data } = await axios.post("https://chat-backendxx.onrender.com/api/user/login",
+      const { data } = await axios.post(url+"api/user/login",
         {"email": email,"password":password }
       );
 

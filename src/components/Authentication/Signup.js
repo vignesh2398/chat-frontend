@@ -46,7 +46,7 @@ export const Signup = () => {
     console.log(name, email, password, pic);
     try {
 
-      const { data } = await axios.post("https://chat-backendxx.onrender.com/api/user/signup",
+      const { data } = await axios.post(url+"api/user/signup",
         {
           "name":name,
           "email":email,
